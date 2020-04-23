@@ -2,13 +2,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns; sns.set(style="white", color_codes=True)
 
-data = pd.read_csv("data_32.csv")
+data = pd.read_csv("data_39.csv")
 data = data.loc[:, data.columns != 'Unnamed: 0']
+#data = data.where(data["Q"] == 1).dropna()
+
 means = data.mean(axis=0)
 variance = data.var(axis=0)
 correlation = data.corr(method='pearson')
 
-print(means)
+print("Means of every column:\n{}".format(means))
 print(variance)
 print(correlation)
 
@@ -28,7 +30,7 @@ plt.show()
 #sns.jointplot(t,s,kind='kde');
 
 #density
-
+'''
 plt.subplots(2, 2)
 data['Q'].plot(kind='kde')
 plt.title('Q density')
@@ -53,13 +55,7 @@ plt.show()
 data['T'].plot(kind='hist')
 plt.title('T Histogram')
 plt.show()
-
-
-s = data.iloc[:,2]
-t = data.iloc[:,3]
-sns.jointplot("T", "S", data=data)
-
-#print(s)
+'''
 
 #commenthere
 
