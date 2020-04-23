@@ -1,5 +1,5 @@
 import pandas as pd
-import seaborn as sns
+import seaborn as sns; sns.set(style="white", color_codes=True)
 
 data = pd.read_csv("data_17.csv")
 
@@ -14,10 +14,11 @@ print(correlation)
 ### --- plot ----
 #ax = data.plot.hist(axis= 0, bins=12, alpha=0.5)
 #density = data.plot.kde()
-s = data.iloc[:,1:].values
-#sns.jointplot(t,s,kind='kde');
+s = data.iloc[:,2]
+t = data.iloc[:,3]
+sns.jointplot("T", "S", data=data)
 
-print(s)
+#print(s)
 
 #commenthere
 
