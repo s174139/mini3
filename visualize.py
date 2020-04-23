@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import seaborn as sns; sns.set(style="white", color_codes=True)
 
 data = pd.read_csv("data_17.csv")
 
@@ -46,6 +47,11 @@ plt.title('T Histogram')
 plt.show()
 
 
+s = data.iloc[:,2]
+t = data.iloc[:,3]
+sns.jointplot("T", "S", data=data)
+
+#print(s)
 
 #commenthere
 
